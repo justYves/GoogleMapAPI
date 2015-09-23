@@ -1,12 +1,25 @@
-<h1>Zenefits Web App</h1>
-<div class="row">
-    <div class="input-group">
-        <input type="text" class="form-control" ng-model="query" placeholder="Search for...">
-        <span class="input-group-addon"><a ng-click="search(query)"><i class="fa fa-search"></i></a></span>
+<div class="container">
+    <h1 id="headline">Zenefits Web App</h1>
+</div>
+
+<search-box></search-box>
+
+<div class="container">
+    <ui-view></ui-view>
+<div id="search-result" class="row" ng-show="searched">
+    <div class="col-md-6">
+        <div id="repeat" ng-repeat="place in places track by $index">
+            <h3> {{$index+1}}.  {{place.name}}</h3>
+            <p>{{place.formatted_address}}</p>
+            <pre>{{place}}</pre>
+            <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+                <label id="names">{{marker.title}}</label>
+            </a>
+        </div>
+    </div>
+    <div id="map-container" class="col-md-6">
+        <div id="map"></div>
     </div>
 </div>
-<pre>Location: {{location}}</pre>
-<pre>Query: {{query}}</pre>
-<ui-view></ui-view>
-<div id="map"></div>
+</div>
 

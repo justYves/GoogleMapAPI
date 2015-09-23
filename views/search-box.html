@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default" style="box-shadow: 0 1px 6px rgba(0, 0, 0, .12)" role="navigation">
+    <div class="container">
+        <div id="search-box" style="padding-top:1em" class="row">
+            <div class="col-xs-12">
+                <form ng-submit="search(query)">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" ng-model="query" placeholder="Search for...">
+                            <span class="input-group-btn"><button type="submit" class="btn" ><i class="fa fa-search"></i></button></span>
+                        </div>
+                    </div>
+                </form>
+                <span ng-show="debugging">
+        <pre>Location: {{location}}</pre>
+        <pre>Query: {{query}}</pre>
+    </span>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -10,5 +10,16 @@
   }
 }
 
+//Search Box
+.form-group.focus .form-control, .form-control:focus {
+    border-color: #e67e22;
+}
+
+//Headline
+
+#headline{
+  color: #e67e22;
+}
+
 // Add your fractal Sass files below!
-// @import 'css/**';
+@import 'css/map';
