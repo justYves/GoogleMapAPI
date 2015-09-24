@@ -1,7 +1,7 @@
 var app = angular.module('ZenefitsApp',['ui.bootstrap','ui.router'])
 
 .run(function($rootScope) {
-    $rootScope.debugging = true;
+    $rootScope.debugging = false;
 })
 
 .config(function ($urlRouterProvider, $locationProvider) {

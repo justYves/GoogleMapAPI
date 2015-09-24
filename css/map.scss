@@ -1,18 +1,18 @@
-body {
-    font: bold 12px Arial;
-}
+// body {
+//     font: bold 12px Arial;
+// }
 
-a {
-    text-decoration: none;
-}
+// a {
+//     text-decoration: none;
+// }
 
-html {
-    height: 100vh
-}
+// html {
+//     height: 100vh
+// }
 
-body {
-    height: 100vh
-}
+// body {
+//     height: 100vh
+// }
 
 #map-container {
     height: 30vh;
@@ -21,6 +21,7 @@ body {
 #map {
     height: 100%;
     width: 100%;
+    border: solid 1px #bfbfbf;
 }
 
 #names {

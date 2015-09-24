@@ -1,8 +1,18 @@
-$turquoise: lighten(#1abc9c,20%);
-
+$turquoise: lighten(#1abc9c, 20%);
+$darkTurquoise: #1abc9c;
+$orange: #e67e22;
 search-result {
-  h4 {
-    display: inline;
-    color: $turquoise;
-  }
+    h4 {
+        display: inline;
+        color: $turquoise;
+    }
+    ul {
+        list-style-type: none;
+    }
+    .panel-default {
+        &:hover {
+            border-color: $darkTurquoise;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12);
+        }
+    }
 }

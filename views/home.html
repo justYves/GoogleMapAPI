@@ -8,14 +8,19 @@
 
 <div class="container">
     <div class="row" ng-show="searched">
-        <div id="loader" ng-show="!places.length">
+        <div ng-show="error" id="error-message" class="col-xs-12">
+            <div class="alert alert-danger text-center" role="alert">{{error}}</div>
+        </div>
+        <div id="loader" ng-show="!places.length &&!error">
         <img  ng-src="assets/images/loader.gif">
         </div>
+
+        <div>
         <div class="col-md-6">
             <search-result></search-result>
         </div>
         <div id="map-container" class="col-md-6">
-            <div id="map"></div>
+            <map></map>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-app.controller("HomeController", function($scope, $q,$rootScope) {
+app.controller("HomeController", function($scope, $q,$rootScope,$anchorScroll) {
 
   //set this to true to show the app in debugging mode
   $scope.debugging = $rootScope.debugging;
@@ -6,9 +6,10 @@ app.controller("HomeController", function($scope, $q,$rootScope) {
   $scope.search = function(query) {
     //Hard coded Zenefits' address
     // var zenefits = new google.maps.LatLng(37.761824, -122.398587);
+    $anchorScroll(0);
     if (query.length > 1) query = query.replace(/zenefits/gi, "303 2nd St, San Francisco, CA");
+    initVar();
     initMap();
-    setVar();
     processQuery(query);
   };
 
@@ -21,11 +22,12 @@ app.controller("HomeController", function($scope, $q,$rootScope) {
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
   }
 
-  function setVar() {
+  function initVar() {
     $scope.searched = false;
     $scope.places = null;
     $scope.searched = true;
     $scope.markers = [];
+    $scope.error = null;
     // var infoWindow = new google.maps.InfoWindow();
   }
 
@@ -36,7 +38,13 @@ app.controller("HomeController", function($scope, $q,$rootScope) {
     }, displayResult)
   }
 
-  function displayResult(data) {
+  function displayResult(data,status) {
+  if (status !== google.maps.places.PlacesServiceStatus.OK) {
+    console.error(status);
+    $scope.error="Sorry, we can't find what you are looking for. Try searching for something else."
+    $scope.$digest();
+    return;
+  }
     $scope.places = trimProp(data);
     if ($scope.debugging) console.log(data);
     createMarkers(data);
@@ -60,7 +68,11 @@ app.controller("HomeController", function($scope, $q,$rootScope) {
     });
   };
 
-  var formatKey = (key) => (key.chartAt(0).toUpperCase() + key.substring(1));
+  $scope.formatKey = (key) => (key.charAt(0).toUpperCase() + key.substring(1));
+
+
+
+
 
 
   // var request = {
