@@ -1,25 +1,21 @@
-<div class="container">
-    <h1 id="headline">Zenefits Web App</h1>
+<div>
+    <div class="container">
+        <h1 id="headline">Zenefits Web App</h1>
+    </div>
 </div>
 
 <search-box></search-box>
 
 <div class="container">
-    <ui-view></ui-view>
-<div id="search-result" class="row" ng-show="searched">
-    <div class="col-md-6">
-        <div id="repeat" ng-repeat="place in places track by $index">
-            <h3> {{$index+1}}.  {{place.name}}</h3>
-            <p>{{place.formatted_address}}</p>
-            <pre>{{place}}</pre>
-            <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
-                <label id="names">{{marker.title}}</label>
-            </a>
+    <div class="row" ng-show="searched">
+        <div id="loader" ng-show="!places.length">
+        <img  ng-src="assets/images/loader.gif">
+        </div>
+        <div class="col-md-6">
+            <search-result></search-result>
+        </div>
+        <div id="map-container" class="col-md-6">
+            <div id="map"></div>
         </div>
     </div>
-    <div id="map-container" class="col-md-6">
-        <div id="map"></div>
-    </div>
 </div>
-</div>
-

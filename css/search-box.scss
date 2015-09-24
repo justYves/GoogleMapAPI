@@ -1,0 +1,31 @@
+$darkgrey: darken(#C4C4C4, 2%);
+$orange: #e67e22;
+
+search-box {
+    //Search Box
+    .form-group.focus .form-control,
+    .form-control:focus {
+        border-color: #e67e22;
+    }
+    nav.navbar.navbar-default {
+        border-bottom: solid 1px $darkgrey;
+        border-top: solid 1px $darkgrey;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, .12);
+    }
+
+    input.form-control.input-hg {
+      border-right: none;
+    }
+
+    span.input-group-addon{
+      background-color: white;
+      border: 2px solid #bdc3c7;
+      transition: border .25s linear, color .25s linear, background-color .25s linear;
+      font-size: 2em;
+      color: $orange;
+    }
+
+    .focus {
+      border-color: #e67e22 !important;
+    }
+}

@@ -1,0 +1,10 @@
+#loader {
+  height: 100vh;
+  display: block;
+    &>img {
+        margin-top:10em;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
