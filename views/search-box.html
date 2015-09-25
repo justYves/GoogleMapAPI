@@ -4,9 +4,9 @@
             <div class="col-xs-12">
                 <form ng-submit="search(query)">
                     <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" ng-focus="focus=true" ng-blur="focus=false" class="form-control input-hg" ng-model="query" placeholder='Type what you are looking for here. For Example: "Restaurants near Zenefits"'>
-                            <span ng-class="{'focus':focus}" class="input-group-addon" ng-click="search(query)"><i class="fa fa-search"></i></a></span>
+                        <div class="input-group" ng-class="{'focus':focus}" >
+                            <input type="text" ng-focus="focus=true" ng-blur="focus=false" class="form-control input-hg"  ng-model="query" placeholder='Type what you are looking for here. For Example: "Restaurants near Zenefits"'>
+                            <span class="input-group-addon" ng-click="search(query)"><i class="fa fa-search"></i></a></span>
                         </div>
                     </div>
                 </form>

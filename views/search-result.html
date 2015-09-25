@@ -1,24 +1,5 @@
 <div ng-repeat="place in places track by $index">
-    <!-- <div class="row">
-    <div class="col-xs-1">
-        .row
-    </div>
-    <div class="col-xs-11">
-
-    </div>
-</div>
-    <h4> {{$index+1}}. <a href="#">{{place.name}}</a> <img style="max-height:1em" ng-src={{place.icon}}> </h4>
-    <p>Address: {{place.formatted_address}}</p>
-    <p ng-if="{{place.price_level}}">Price: {{place.price_level}}</p>
-    <p ng-if="{{place.rating}}">Rating: {{place.rating}}</p>
-    <p>Type: {{place.types.join(", ")}}</p>
-    <span ng-show="debugging">
-                <pre>{{place}}</pre>
-            </span>
-    <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
-        <label id="names">test{{marker.title}}</label>
-    </a> -->
-    <div class="panel-group">
+    <div class="panel-group" ng-click="triggerClick($index)">
         <div class="panel panel-default">
             <div class="panel-heading">
                 {{$index+1}}.<h4> <a href="#">{{place.name}}</a> <img class="pull-right" style="max-height:1em" ng-src={{place.icon}}> </h4>
