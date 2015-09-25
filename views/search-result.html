@@ -2,12 +2,20 @@
     <div class="panel-group" ng-click="triggerClick($index)">
         <div class="panel panel-default">
             <div class="panel-heading">
-                {{$index+1}}.<h4> <a href="#">{{place.name}}</a> <img class="pull-right" style="max-height:1em" ng-src={{place.icon}}> </h4>
+                {{$index+1}}.
+                <h4> <a href="#">{{place.name}}</a> <img class="pull-right" style="max-height:1em" ng-src={{place.icon}}> </h4>
             </div>
             <div class="panel-body">
-            <ul>
-            <span ng-show="!!value" ng-repeat="(key,value) in place.details"><li> <strong>{{formatKey(key)}}: </strong> {{value}}</li></span>
-            </ul>
+                <ul>
+                    <div ng-show="!!value" ng-repeat="(key,value) in place.details">
+                        <div class="col-xs-2">
+                            <strong>{{properFormat(key)}} </strong>
+                        </div>
+                        <div class="col-xs-10">
+                            {{value}}
+                        </div>
+                    </div>
+                </ul>
                 <span ng-show="debugging">
                     <pre>{{place}}</pre>
                 </span>
